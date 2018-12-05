@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message Number {
+    float value = 1;
+}
+
+message Req {
+    string sentence = 1;
+}
+
+message Res {
+    string token = 1;
+    string label = 2;
+}
+
+service Calculator {
+    rpc SquareRoot(Number) returns (Number) {}
+    rpc getNER (Req) returns (Res) {}
+    rpc getPOS (Req) returns (Res) {}
+}
+
