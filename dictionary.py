@@ -7,7 +7,7 @@ from gensim.models import KeyedVectors
 from gensim.scripts.glove2word2vec import glove2word2vec
 
 LIMIT_LENGTH_OF_SENTENCES = 1000
-GLOVE_FILENAME = "/home/huuthuc/Downloads/glove.6B/glove.6B.300d.txt"
+GLOVE_FILENAME = "/home/huuthuc/Downloads/glove.6B/glove.6B.100d.txt"
 
 class Dictionary():
     def __init__(self):

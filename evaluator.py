@@ -129,6 +129,8 @@ class Evaluator():
         
         self.count = count
         self.number_of_goldslot = Evaluator.get_number_of_gold_slot(gold_tokenset)
+    
+    
     def evaluate(self, type_matching):
         #"strict": strict matching
         #"relax": relax matching

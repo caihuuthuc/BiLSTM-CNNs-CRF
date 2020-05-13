@@ -20,8 +20,8 @@ class Network():
         self.num_classes = len(self.corpus.label_dictionary)
         self.hidden_size_lstm = 200
         self.dropout_prob = 0.5
-        self.n_epochs = 60
-        self.batch_size = 256
+        self.n_epochs = 80
+        self.batch_size = 10
         self.n_batches = int(self.n_train_samples//self.batch_size) + 1
         self.learning_rate = 0.015
         self.momentum = 0.9
@@ -166,7 +166,8 @@ class Network():
                     timer = time()
                     saver.save(self.sess, './saved_model/ner/ckpt', global_step=step)
                     
-                    if (step+1) % 500 == 0:
+                    if (step+1) % 1000 == 0 and loss_ < 1.0:
+                        print('Evaluating...')
                         self.dev()
                         print('Took %fs' % (time() - timer))
                         timer = time()
